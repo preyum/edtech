@@ -1,0 +1,252 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* Header Styles */
+.site-header {
+    width: 100%;
+    background-color: #333; /* Dark background for the header */
+    color: #fff;
+    padding: 10px 0;
+    position: fixed; /* Fixed position for the header */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px; /* Add padding for better click area */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+/* Hover Effect for Navigation Menu Links */
+.nav-menu a:hover {
+    background-color: #90afcd; /* Background color on hover */
+    color: #fff; /* Ensure text color remains white */
+}
+
+/* Training Section Styles */
+.training-section {
+    width: 100%;
+    min-height: 100vh; /* Ensure the section takes up at least the full viewport height */
+    background-image: linear-gradient(rgba(156, 80, 237, 0.65), rgba(51, 7, 89, 0.65)), 
+                      url("/edtech/frontend/img/—Pngtree—square\ purple\ white_1600443.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 60px; /* Space for the fixed header */
+}
+
+.training-section h1 {
+    text-align: center;
+    padding: 25px 0;
+    color: #ffffff;
+    font-size: 2.5rem; /* Larger font size */
+    font-weight: 700; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Spacing between letters */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Adds a subtle shadow for better readability */
+}
+
+.container {
+    width: 90%; /* Adjusted to make it more fluid */
+    max-width: 1170px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.training-item {
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    flex: 1 1 200px; /* Flexbox property for responsiveness */
+    margin: 15px;
+    box-shadow: 0px 0px 10px lightslategray; /* Adjusted shadow */
+    transition: background 0.3s ease, transform 0.3s ease; /* Added transition for hover effects */
+}
+
+.training-item img {
+    width: 100%;
+    height: auto;
+    max-width: 150px; /* Consistent image sizing */
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.training-item h3 {
+    padding: 10px 0;
+    color: black;
+}
+
+.training-item p {
+    font-size: 14px;
+    padding: 10px;
+    color: #333;
+}
+
+.training-item button {
+    background: #6600cc;
+    padding: 10px 25px;
+    color: #fff;
+    font-size: medium;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.training-item:hover {
+    background: lightskyblue;
+    transform: scale(1.05); /* Added slight zoom on hover */
+}
+
+.training-item:hover h3,
+.training-item:hover p {
+    color: black;
+}
+
+.training-item:hover button {
+    color: white;
+    background: black;
+}
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .training-item {
+        margin: 10px auto;
+        max-width: 300px; /* Ensure items don’t get too wide on small screens */
+    }
+
+    .site-header {
+        padding: 20px 0; /* Adjust padding for mobile */
+    }
+
+    .header-content {
+        padding: 0 10px;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .training-item {
+        flex: 1 1 45%; /* Two items per row on medium screens */
+    }
+}
+
+/* Footer Styles */
+.site-footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly more opaque black background */
+    color: #fff;
+    text-align: center;
+    padding: 30px 0; /* Increased padding for a larger footer */
+    position: relative;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Space between back button and footer info */
+    align-items: center;
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-content .back-to-home {
+    color: #fff;
+    text-decoration: none;
+    background: #333; /* Background color for the button */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-content .back-to-home:hover {
+    background: #49078a; /* Hover color for the button */
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-info p {
+    margin: 15px 0;
+    
+}
+.footer-content p {
+    color: #fff;
+}
+.footer-content a {
+    color: #f9f6f6;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-info a:hover {
+    color: #fcfcfc; /* Matching hover color with buttons */
+}
+.footer-info a:hover {
+    color: #fcfcfc; /* Matching hover color with buttons */
+}
