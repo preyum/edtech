@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('abstract-gradient-background-with-colorful-and-modern-style-vector.jpg') no-repeat center center/cover;
+}
+.container{
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset -5px -5px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    padding: 25px 30px;
+}
+.container .title{
+    font-size: 23px;
+    font-weight: bold;
+    width: 220px;
+    font-family: sans-serif;
+    text-align: center;
+    color: rgb(67, 36, 97);
+    background-color: white;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 8px;
+}
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    margin: 20px 0 12px 0;
+    width: calc(100% / 2 - 20px);
+}
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: white;
+}
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+
+}
+.user-details .input-box  input i{
+    position: absolute;
+    left: 0;
+    top: 8px;
+    padding: 9px 8px;
+    color: #aaa;
+    transition: 0.3s;
+}
+label {
+    display: flex;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+}
+form .button{
+    height:30px;
+    margin: 45px 0;
+}
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    align-items: center;
+    border-radius: 10px;
+}
+
+
