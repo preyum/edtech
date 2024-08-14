@@ -46,7 +46,7 @@
 .container {
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(51, 7, 89, 0.65)), url("/edtech/frontend/img/—Pngtree—square\ purple\ white_1600443.png");
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(51, 7, 89, 0.65)), url("img/—Pngtree—square\ purple\ white_1600443.png");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;

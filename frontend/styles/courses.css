@@ -62,7 +62,7 @@
     width: 100%;
     min-height: 100vh; /* Ensure the section takes up at least the full viewport height */
     background-image: linear-gradient(rgba(156, 80, 237, 0.65), rgba(51, 7, 89, 0.65)), 
-                      url("/edtech/frontend/img/—Pngtree—square\ purple\ white_1600443.png");
+                      url("img/—Pngtree—square\ purple\ white_1600443.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; /* Prevent the image from repeating */
