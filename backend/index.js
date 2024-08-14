@@ -2,6 +2,9 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 const mongoose = require ('mongoose');
 
+// import routes
+const authRoute = require ('./routes/authRoute');
+
 // db connection string
 const conn_str = process.env.DB_URL;
 
@@ -21,7 +24,8 @@ mongoose.connect(conn_str)
   console.log(`Error: ${err}`);
 })
 
-// routes
+// routes middlewares
+app.use('/users', authRoute);
 
 
 app.listen(process.env.PORT, ()=>{
