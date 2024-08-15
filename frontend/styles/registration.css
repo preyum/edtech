@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('purple.png') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img/purple.png') no-repeat center center/cover;
 }
 .container{
     max-width: 700px;
@@ -91,6 +91,7 @@ form .button input{
     height: 100%;
     width: 100%;
     font-size: 18px;
+    color: white;
     font-weight: bold;
     outline: none;
     align-items: center;
