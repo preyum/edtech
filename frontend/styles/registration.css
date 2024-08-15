@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img/purple.png') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(51, 7, 89, 0.65)), url('img/purple.png') no-repeat center center/cover;
 }
 .container{
     max-width: 700px;
@@ -27,13 +27,13 @@ body{
     padding: 25px 30px;
 }
 .container .title{
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
-    width: 235px;
+    width: 250px;
     font-family: 'Lucida Sans';
     text-align: center;
-    color: rgb(67, 36, 97);
-    background-color:whitesmoke;
+    color: blueviolet;
+    background-color:rgb(255, 252, 252);
     border-radius: 20px;
     margin: 8px;
     padding: 8px;
@@ -64,6 +64,7 @@ form .user-details .input-box{
     padding-left: 15px;
     font-size: 16px;
     border-bottom-width: 2px;
+   
 
 }
 .user-details .input-box  input i{
@@ -74,11 +75,28 @@ form .user-details .input-box{
     color: #aaa;
     transition: 0.3s;
 }
+
+
 label {
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: bold;
     color: white;
+}
+
+.select-container select {
+
+    background-color: blueviolet;
+    height: 36px;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    padding: 9px 8px;
+    outline: none;
+    border-radius: 10px;
+    
 }
 
 form .button{
@@ -95,7 +113,7 @@ form .button input{
     font-weight: bold;
     outline: none;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: blueviolet;
 }
 
