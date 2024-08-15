@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('abstract-gradient-background-with-colorful-and-modern-style-vector.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('purple.png') no-repeat center center/cover;
 }
 .container{
     max-width: 700px;
@@ -27,15 +27,15 @@ body{
     padding: 25px 30px;
 }
 .container .title{
-    font-size: 23px;
+    font-size: 22px;
     font-weight: bold;
-    width: 220px;
-    font-family: sans-serif;
+    width: 235px;
+    font-family: 'Lucida Sans';
     text-align: center;
     color: rgb(67, 36, 97);
-    background-color: white;
-    border-radius: 10px;
-    margin: 2px;
+    background-color:whitesmoke;
+    border-radius: 20px;
+    margin: 8px;
     padding: 8px;
 }
 .container form .user-details{
@@ -56,7 +56,7 @@ form .user-details .input-box{
     color: white;
 }
 .user-details .input-box input{
-    height: 45px;
+    height: 40px;
     width: 100%;
     outline: none;
     border-radius: 5px;
@@ -76,20 +76,34 @@ form .user-details .input-box{
 }
 label {
     display: flex;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: bold;
     color: white;
 }
+
 form .button{
-    height:30px;
-    margin: 45px 0;
+    height:38px;
+    margin: 33px 0;
+    
 }
+
 form .button input{
     height: 100%;
     width: 100%;
+    font-size: 18px;
+    font-weight: bold;
     outline: none;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 20px;
+    background-color: blueviolet;
 }
+
+.input-box i{
+    position: relative;
+    top: -30px;
+    left: 275px;
+}
+
+
 
 
