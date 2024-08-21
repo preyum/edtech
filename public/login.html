@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <form action="" class="form" onsubmit="handleLogin(event)">
+        <form action="/users/login" method="POST" class="form" onsubmit="handleLogin(event)">
             <div class="form">
                 <h2>Login</h2>
                 <div class="input-box">
@@ -17,7 +17,7 @@
                     <i class="fa-solid fa-envelope" style="color: white;"></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="" placeholder="Enter password" required>
+                    <input type="password" name="password" placeholder="Enter password" required>
                     <i class="fa-solid fa-lock" style="color: white;"></i>
                 </div>
                 
