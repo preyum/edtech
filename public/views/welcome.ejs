@@ -1,8 +1,13 @@
 
+<%- include('./components/user-layout', { title: 'Dashboard', body: ` 
+  <div>
+    yay! youre logged in !!
+    <button id="logout">Logout</button>
+  </div>
+`}) %>
 
-yay! youre logged in !!
 
-<button id="logout">Logout</button>
+
 
 <script>
   const logoutButton = document.getElementById('logout');

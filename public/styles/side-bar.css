@@ -7,13 +7,13 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
+/* body {
     position: relative;
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
     background-color: #f4f4f4;
-}
+} */
 
 /* Sidebar Styles */
 .sidebar {

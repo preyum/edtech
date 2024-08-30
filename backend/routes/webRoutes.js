@@ -7,7 +7,7 @@ router.get('/', (req,res)=>{
 })
 
 router.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../public/view/login.html'));
+  res.render('login');
 });
 
 router.get('/users/', (req, res)=>{
@@ -16,7 +16,7 @@ router.get('/users/', (req, res)=>{
 
 router.get('/users/welcome', (req, res) => {
 
-  res.sendFile(path.join(__dirname, '../../public/view/', 'welcome.html'));
+  res.render('welcome');
 
 });
 

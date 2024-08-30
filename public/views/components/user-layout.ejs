@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="side-bar2.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="side-bar">
+      <%- include('side-bar2') %> <!-- Include the sidebar here -->
+    </div>
+    
+    <div class="content">
+        <%- body %> <!-- Inject the page-specific content here -->
+    </div>
+  </div>
+</body>
+</html>
