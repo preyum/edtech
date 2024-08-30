@@ -1,6 +1,6 @@
 // fetch nav-bar and add it to 'nav-bar' containers
 
-fetch('components/nav-bar.html')
+fetch('/nav-bar')
   .then(res => res.text())
   .then(data => {
     console.log(data);

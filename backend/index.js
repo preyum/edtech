@@ -6,7 +6,6 @@ const cookieParser = require('cookie-parser');
 
 
 
-
 // import routes
 const authRoute = require('./routes/authRoute');
 const webRoute = require('./routes/webRoutes');
@@ -17,6 +16,10 @@ const conn_str = process.env.DB_URL;
 
 //create express server
 const app = express();
+
+// Set EJS as the templating engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '../public/views'));
 
 // serve webpages from server
 app.use(express.static(path.join(__dirname, '../public')));

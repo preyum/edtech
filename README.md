@@ -1,1 +1,1 @@
-# edtech
+# Online Education Platform - Scholarly
