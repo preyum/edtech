@@ -1,10 +1,10 @@
+require('dotenv').config();
 const express = require('express');
-const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const expressLayouts = require('express-ejs-layouts');
-
+const cors = require('cors');
 
 
 // import routes
@@ -18,6 +18,23 @@ const conn_str = process.env.DB_URL;
 //create express server
 const app = express();
 
+//middlewares
+app.use(cors({
+  origin: process.env.CORS_ORIGIN,
+  credentials: true
+}))
+
+app.use(express.json({
+  limit: "16kb"
+}));
+
+app.use(express.urlencoded({
+  extended: true,
+  limit: "16kb"
+}));
+
+app.use(cookieParser());
+
 // Set EJS as the templating engine
 app.use(expressLayouts)
 app.set('view engine', 'ejs');
@@ -26,15 +43,6 @@ app.set('layout', 'layouts/main-layout');
 
 // serve webpages from server
 app.use(express.static(path.join(__dirname, '../public')));
-
-// method for parsing body
-app.use(express.json());
-
-// parsing data from forms
-app.use(express.urlencoded({ extended: true }));
-
-// parsing cookies
-app.use(cookieParser());
 
 // connecting to DB
 mongoose.connect(conn_str)
