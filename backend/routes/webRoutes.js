@@ -26,8 +26,28 @@ router.get('/about', (req, res) => {
   });
 });
 
-router.get('/users/', (req, res)=>{
-  res.sendFile(path.join(__dirname, '../'))
+router.get('/login', (req, res) => {
+
+  res.render('login', {
+    title: "Login",
+    heading: 'Login',
+  });
+});
+
+router.get('/contact', (req, res) => {
+
+  res.render('contact', {
+    title: "Contact Us",
+    heading: 'Contact Us',
+  });
+});
+
+router.get('/register', (req,res)=>{
+
+  res.render('registration', {
+    title: "Register",
+    heading: "Register"
+  })
 })
 
 router.get('/users/welcome', (req, res) => {
