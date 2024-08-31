@@ -7,31 +7,6 @@ body {
     color: #22668D;
     background: linear-gradient(to bottom right, #F0F4F8, #FFFADD);
   }
-  
-  header {
-    background: #8ECDDD;
-    color: #22668D;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-  }
-  
-  .header-title {
-    font-family: 'Merriweather', serif;
-    font-size: 2.5em;
-    margin: 0;
-  }
-  
-  #dark-mode-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-  }
-  
   .container {
     width: 80%;
     margin: 20px auto;
