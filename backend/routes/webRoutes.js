@@ -10,6 +10,15 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/about', (req, res) => {
+
+  res.render('about', {
+    title: "About Us",
+    heading: 'About Us',
+    layout: '../../public/views/layouts/main-layout'
+  });
+});
+
 router.get('/users/', (req, res)=>{
   res.sendFile(path.join(__dirname, '../'))
 })
@@ -21,7 +30,6 @@ router.get('/users/welcome', (req, res) => {
     heading: 'Scholarly',
     layout: '../../public/views/layouts/main-layout'
   });
-
 });
 
 router.get('/logout', (req,res)=>{
