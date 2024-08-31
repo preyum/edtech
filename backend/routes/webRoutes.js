@@ -10,12 +10,19 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/courses', (req, res) => {
+
+  res.render('courses', {
+    title: "Courses",
+    heading: 'Courses',
+  });
+});
+
 router.get('/about', (req, res) => {
 
   res.render('about', {
     title: "About Us",
     heading: 'About Us',
-    layout: '../../public/views/layouts/main-layout'
   });
 });
 
@@ -28,7 +35,6 @@ router.get('/users/welcome', (req, res) => {
   res.render('welcome', {
     title: "Welcome",
     heading: 'Scholarly',
-    layout: '../../public/views/layouts/main-layout'
   });
 });
 
@@ -39,11 +45,5 @@ router.get('/logout', (req,res)=>{
   .redirect('/');
 })
 
-// serve nav-bar
-// router.get('/nav-bar',(req, res) => {
-
-//   res.sendFile(path.join(__dirname, '../../public/view/components', 'nav-bar.html'));
-
-// });
 
 module.exports = router;
