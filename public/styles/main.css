@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #333;
