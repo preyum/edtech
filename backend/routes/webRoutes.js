@@ -16,7 +16,11 @@ router.get('/users/', (req, res)=>{
 
 router.get('/users/welcome', (req, res) => {
 
-  res.render('welcome');
+  res.render('welcome', {
+    title: "Welcome",
+    heading: 'Scholarly',
+    layout: '../../public/views/layouts/main-layout'
+  });
 
 });
 

@@ -3,6 +3,7 @@ const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const expressLayouts = require('express-ejs-layouts');
 
 
 
@@ -18,8 +19,10 @@ const conn_str = process.env.DB_URL;
 const app = express();
 
 // Set EJS as the templating engine
+app.use(expressLayouts)
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../public/views'));
+app.set('layout', 'layouts/main-layout');
 
 // serve webpages from server
 app.use(express.static(path.join(__dirname, '../public')));

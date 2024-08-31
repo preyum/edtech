@@ -1,0 +1,39 @@
+.navbar {
+  background-color: #8ECDDD;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.navbar h1 {
+  color: #22668D;
+  margin: 0;
+  font-size: 24px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #22668D;
+  padding: 8px 15px;
+  background-color: #FFFADD;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  background-color: #FFCC70;
+  color: #22668D;
+}
