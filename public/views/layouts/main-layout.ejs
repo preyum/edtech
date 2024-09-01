@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title><%= title || "Scholarly" %></title>
     <link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body>
   <div class="wrapper">
     <header><%- include('../components/nav-bar') %></header>
-    <main><%- body %></main> <!-- Inject the page-specific content here -->
+    <main class="content"><%- body %></main> <!-- Inject the page-specific content here -->
     <footer><%- include('../components/footer') %></footer>
   </div>
 </body>

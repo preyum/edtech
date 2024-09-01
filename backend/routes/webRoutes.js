@@ -26,9 +26,9 @@ router.get('/about', (req, res) => {
   });
 });
 
-router.get('/login', (req, res) => {
+router.get('/signin', (req, res) => {
 
-  res.render('login', {
+  res.render('signin', {
     title: "Login",
     heading: 'Login',
   });

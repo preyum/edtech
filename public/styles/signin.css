@@ -1,0 +1,87 @@
+.signin-container {
+    background-color: #22668D;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    color: #FFFADD;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #8ECDDD;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #22668D;
+    background-color: #FFFADD; /* Set the default background to white */
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password i {
+    font-size: 18px;
+    color: #22668D;
+}
+
+/* Style for when the fields are focused */
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: #FFCC70;
+    background-color: #FFFADD; /* Background color when the field is active */
+}
+
+.signin-button {
+    background-color: #FFCC70;
+    color: #22668D;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signin-button:hover {
+    background-color: #F2B646;
+}
