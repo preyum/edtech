@@ -6,19 +6,14 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.contact-container{
-  background-color: #8ECDDD;
-  padding: 40px;
-  border-radius: 8px;
+.contact-container {
+  background-color: #22668D;
+  padding: 20px 30px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 500px;
-  height: 100%;
-  transition: transform 0.3s ease-in-out;
-}
-
-.contact-container:hover {
-  transform: scale(1.02);
+  color: #FFFADD;
 }
 
 .form-group {
@@ -26,31 +21,24 @@
 }
 
 label {
-  display: block;
+  font-size: 14px;
   margin-bottom: 5px;
-  font-weight: bold;
-  color: #22668D;
-  transition: color 0.3s ease-in-out;
+  display: block;
+  color: #FFFADD; /* Use the same label color as in Sign In */
 }
 
-label:hover {
-  color: #FFCC70;
-}
-
-input, textarea {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #22668D;
-  border-radius: 4px;
+  border: 1px solid #8ECDDD;
+  border-radius: 5px;
+  box-sizing: border-box;
   font-size: 14px;
   color: #22668D;
-  background-color: #FFFADD;
-  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-input:focus, textarea:focus {
-  border-color: #FFCC70;
-  box-shadow: 0 0 5px rgba(255, 204, 112, 0.7);
+  background-color: #FFFADD; /* Set the default background to match Sign In */
 }
 
 textarea {
@@ -58,26 +46,26 @@ textarea {
   height: 100px;
 }
 
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FFCC70;
+  background-color: #FFFADD; /* Background color when the field is active */
+}
+
 button {
-  width: 100%;
-  padding: 10px;
   background-color: #FFCC70;
-  border: none;
-  border-radius: 4px;
   color: #22668D;
-  font-size: 18px;
-  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 button:hover {
-  background-color: #FFE082;
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-button:active {
-  background-color: #FFD54F;
-  transform: scale(0.98);
+  background-color: #F2B646;
 }
