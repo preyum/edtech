@@ -20,4 +20,9 @@ html, body {
 }
 .content {
   flex: 1;
+  font-family: 'Roboto', sans-serif;
+  background-color: #FFFADD;
+  color: #22668D;
+  margin: 0;
+  padding: 0;
 }
