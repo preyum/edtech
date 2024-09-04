@@ -94,3 +94,22 @@ input[type="text"]:focus {
 .signin-button:hover {
     background-color: #F2B646;
 }
+
+.register-link {
+    text-align: center;
+    margin-top: 15px;
+    color: #FFFADD;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #FFCC70;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.register-link a:hover {
+    color: #F2B646;
+}
+
