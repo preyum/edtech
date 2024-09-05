@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const User = require('../models/User');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 
@@ -42,7 +42,7 @@ router.post('/register', async (req, res) => {
 })
 
 
-router.post('/login', async (req, res) => {
+router.post('/signin', async (req, res) => {
   // validate data
 
   // check if user exists
