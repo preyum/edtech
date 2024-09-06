@@ -1,76 +1,86 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/registration.css">
-    <link rel="stylesheet" href="../styles/thank.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+<link rel="stylesheet" href="../styles/registration.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <body>
-    <div class="container">
-        <div class="title">Registration Form</div>
-        <form action="#">
-            <div class="user-details">
-                <div class="input-box">
-                    <span class="details">First Name</span>
-                    <input type="text" placeholder="First Name" required>
-                    <i class="fa-solid fa-user" style="color:purple;"></i>
-                </div>
-                <div class="input-box">
-                    <span class="details">Last Name</span>
-                    <input type="text" placeholder="Last Name" required>
-                    <i class="fa-solid fa-user" aria-hidden="true" style="color:purple;"></i>
-                </div>
-                <div class="input-box">
-                    <span class="details">Email-id</span>
-                    <input type="text" placeholder="Enter Your Email-id" required>
-                    <i class="fa-solid fa-envelope" aria-hidden="true" style="color:purple;"></i>
-                </div>
-                <div class="input-box">
-                    <span class="details">Phone No</span>
-                    <input type="text" placeholder="Enter Phone No" required>
-                    <i class="fa-solid fa-phone" aria-hidden="true" style="color:purple;"></i>
-                </div>
-                <div class="input-box">
-                    <span class="details">User Name</span>
-                    <input type="text" placeholder="Enter Your User Name" required>
-                    <i class="fa-solid fa-lock" aria-hidden="true" style="color:purple;"></i>
-                </div>
-                <div class="input-box">
-                    <span class="details">Password</span>
-                    <input type="text" placeholder="Enter Your Password" required >
-                    <i class="fa-solid fa-lock" aria-hidden="true" style="color:purple;"></i>
-                </div>
-                <div class="select-container">
-                    <label for="Student_Teacher">Are you Student or Teacher :</label>
-                    <select id="Student_Teacher" name="Student_Teacher" required>
-                        <option value="Teacher">Teacher</option>
-                        <option value="Student">Student</option>
-                    </select>
+    <div class="registration-container">
+        <form action="/registration" method="POST">
+            <div class="input-group">
+                
+                <label for="photo">Photo</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+                
+                
+            </div>
+
+            
+
+            <div class="input-group">
+                <label for="name">First Name</label>
+                <input type="text" id="firstname" placeholder="Enter Your First Name" name="firstname" required>
+                
+            </div>
+
+            <div class="input-group">
+                <label for="name">Last Name</label>
+                <input type="text" id="lastname" placeholder="Enter Your Last Name" name="lastname" required>
+                
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter Your Email-Id" name="email" required>
+                
+            </div>
+
+            <div class="input-group">
+                <label for="Phone">Phone No</label>
+                <input type="text" placeholder="Enter Your Phone-No" required>
+                
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="Enter Your Password" name="password" required>
+                    <button type="button" id="togglePassword" class="toggle-password">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </button>
                 </div>
             </div>
-            <div class="button">
-                <input type="submit" value="Register" onclick="openpopup()">
-                <div class="popup" id="popup">
-                    <img src="../styles/img/thankyouimage.jpeg">
-                    <h2>Thank You!</h2>
-                    <p>Your details has been successfully submitted. Thanks!</p>
-                    <button type="button" onclick="closepopup()">OK</button>
-                </div>
+
+            <div class="input-group">
+                <label for="Student_Teacher">Are you Student or Teacher:</label>
+                <select id="Student_Teacher" name="Student_Teacher" required>
+                    <option value="">Select</option>
+                    <option value="T">Teacher</option>
+                    <option value="S">Student</option>
+                </select>
             </div>
-            <script>
-                let popup = document.getElementById("popup");
-        
-                function openpopup(){
-                    popup.classList.add("open-popup")
-                }
-                function closepopup(){
-                    popup.classList.remove("open-popup")
-                }
-        
-            </script>
+
+            <button type="submit" class="register-button">Register</button>
         </form>
+        
     </div>
 </body>
-</html>
+
+
+
+<script>
+    document.getElementById('togglePassword').addEventListener('click', function () {
+        const passwordField = document.getElementById('password');
+        const icon = this.querySelector('i');
+
+        // Toggle the type attribute
+        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordField.setAttribute('type', type);
+
+        // Toggle the Font Awesome icon classes
+        icon.classList.toggle('fa-eye');
+        icon.classList.toggle('fa-eye-slash');
+    });
+
+</script>
+
+
+
+
