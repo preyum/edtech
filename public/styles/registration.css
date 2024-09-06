@@ -1,128 +1,108 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-body{
+.content{
     display: flex;
-    height: 100vh;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(51, 7, 89, 0.65)), url('img/purple.png') no-repeat center center/cover;
+    height: 100vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.container{
-    max-width: 700px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 600px;
-    align-items: center;
-    margin: auto;
-    margin-top: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: inset -5px -5px rgba(0, 0, 0, 0.5);
-    border-radius: 25px;
-    padding: 25px 30px;
+.registration-container{
+    background-color: #22668D;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    color: #FFFADD;
 }
-.container .title{
-    font-size: 24px;
-    font-weight: bold;
-    width: 250px;
-    font-family: 'Lucida Sans';
+h2 {
+    margin-bottom: 20px;
     text-align: center;
-    color: blueviolet;
-    background-color:rgb(255, 252, 252);
-    border-radius: 20px;
-    margin: 8px;
-    padding: 8px;
 }
-.container form .user-details{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px 0 12px 0;
-}
-form .user-details .input-box{
+
+.input-group {
     margin-bottom: 15px;
-    margin: 20px 0 12px 0;
-    width: calc(100% / 2 - 20px);
 }
-.user-details .input-box .details{
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-    color: white;
-}
-.user-details .input-box input{
-    height: 40px;
-    width: 100%;
-    outline: none;
-    border-radius: 5px;
-    border: 1px;
-    padding-left: 15px;
-    font-size: 16px;
-    border-bottom-width: 2px;
-   
-
-}
-.user-details .input-box  input i{
-    position: absolute;
-    left: 0;
-    top: 8px;
-    padding: 9px 8px;
-    color: #aaa;
-    transition: 0.3s;
-}
-
 
 label {
-    display: flex;
-    margin-bottom: 15px;
-    font-weight: bold;
-    color: white;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
 }
-
-.select-container select {
-
-    background-color: blueviolet;
-    height: 36px;
+input[type="file"],
+ input[type="radio"],
+ input[type="checkbox"],
+ select {
+    margin-bottom: 5px;
+}
+input[type="firstname"],
+input[type="lastname"],
+input[type="email"],
+input[type="password"],
+input[type="text"] {
     width: 100%;
-    text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
-    padding: 9px 8px;
-    outline: none;
-    border-radius: 10px;
-    
+    padding: 10px;
+    border: 1px solid #8ECDDD;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #22668D;
+    background-color: #FFFADD; 
 }
-
-form .button{
-    height:38px;
-    margin: 33px 0;
-    
-}
-
-form .button input{
-    height: 100%;
-    width: 100%;
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
-    outline: none;
-    align-items: center;
-    border-radius: 10px;
-    background-color: blueviolet;
-}
-
-.input-box i{
+.password-wrapper {
     position: relative;
-    top: -30px;
-    left: 275px;
+    display: flex;
+    align-items: center;
+}
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.toggle-password i {
+    font-size: 18px;
+    color: #22668D;
+}
 
+input[type="file"]:focus,
+ input[type="radio"]:focus,
+ input[type="checkbox"]:focus,
+ select:focus {
+    outline: none;
+    border-color: #FFCC70;
+    background-color: #FFFADD;
+}
+input[type="firstname"]:focus,
+input[type="lastname"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: #FFCC70;
+    background-color: #FFFADD;
+}
 
+.register-button {
+    background-color: #FFCC70;
+    color: #22668D;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
 
+.register-button:hover {
+    background-color: #F2B646;
+}
