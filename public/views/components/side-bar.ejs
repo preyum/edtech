@@ -1,87 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/side-bar.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<aside>
-    <div class="sidebar">
-        <div class="logo_content">
-            <div class="logo">
-                <i class='bx bx-code-alt'></i>
-                <div class="logo_name">Scholarly</div>
-            </div>
-        </div>
-        <ul class="nav_list">
-            <li>
-                <i class='bx bx-search-alt-2 bx-search'></i>
-                <input type="text" placeholder="Search...">
-                <span class="tooltip">Search</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-dashboard'></i>
-                    <span class="links_name">Dashboard</span>
-                </a>
-                <span class="tooltip">User Profile</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-message-dots'></i>
-                    <span class="links_name">Message</span>
-                </a>
-                <span class="tooltip">Your Messages</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-book-open'></i>
-                    <span class="links_name">Courses</span>
-                </a>
-                <span class="tooltip">Your Courses</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Explore</span>
-                </a>
-                <span class="tooltip">Explore Content</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-cart'></i>
-                    <span class="links_name">Order</span>
-                </a>
-                <span class="tooltip">Your Orders</span>
-            </li>
-            
-            <li>
-                <a href="#">
-                    <i class='bx bxs-cog'></i>
-                    <span class="links_name">Setting</span>
-                </a>
-                <span class="tooltip">Settings</span>
-            </li>
-        </ul>
-        <div class="profile_content">
-            <div class="profile">
-                <div class="profile_details">
-                     <img src="images (1).png" alt="Profile Picture">
-                    <div class="name_job">
-                        <div class="name">Sam</div>
-                        <div class="job">Student</div>
-                    </div>
-                </div>
-                <i class='bx bxs-log-out' id="log_out"></i>
-            </div>
-        </div>
-    </div>
-    <!-- <div class="home_content">
-        <div class="text">Home Content</div>
-    </div>
-    <footer>
-        <p>&copy; 2024 Scholartly. All rights reserved.</p>
-    </footer> -->
-</aside>
-</html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<link rel="stylesheet" href="../../styles/sidebar.css"> <!-- Link to external CSS file -->
+<nav>
+    <ul>
+        <li><a href="#" class="logo">
+                <img src="scholarly.jpeg" alt="Logo">
+                <span class="nav-item"></span>
+            </a></li>
+        <li><a href="#">
+                <i class="fas fa-home"></i>
+                <span class="nav-item">Home</span>
+            </a></li>
+        <li><a href="#">
+                <i class="fas fa-user"></i>
+                <span class="nav-item">Profile</span>
+            </a></li>
+        <li><a href="#">
+                <i class="fas fa-clock"></i> <!-- Changed icon -->
+                <span class="nav-item">History</span>
+            </a></li>
+        <li><a href="#">
+                <i class="fas fa-chart-bar"></i>
+                <span class="nav-item">Analytics</span>
+            </a></li>
+        <li><a href="#">
+                <i class="fas fa-tasks"></i>
+                <span class="nav-item">Tasks</span>
+            </a></li>
+        <li><a href="#">
+                <i class="fas fa-cog"></i>
+                <span class="nav-item">Settings</span>
+            </a></li>
+        <li><a href="#">
+                <i class="fas fa-question-circle"></i>
+                <span class="nav-item">Help</span>
+            </a></li>
+        <li><a href="#" class="logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="nav-item">Logout</span>
+            </a></li>
+    </ul>
+</nav>
