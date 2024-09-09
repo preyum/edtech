@@ -3,7 +3,7 @@
 
 <body>
     <div class="registration-container">
-        <form action="/registration" method="POST">
+        <form action="/users/register" method="POST">
             <div class="input-group">
                 
                 <label for="photo">Photo</label>
@@ -16,13 +16,13 @@
 
             <div class="input-group">
                 <label for="name">First Name</label>
-                <input type="text" id="firstname" placeholder="John" name="firstname" required>
+                <input type="text" id="firstname" placeholder="John" name="firstName" required>
                 
             </div>
 
             <div class="input-group">
                 <label for="name">Last Name</label>
-                <input type="text" id="lastname" placeholder="Snow" name="lastname" required>
+                <input type="text" id="lastname" placeholder="Snow" name="lastName" required>
                 
             </div>
 
@@ -34,7 +34,7 @@
 
             <div class="input-group">
                 <label for="Phone">Phone No</label>
-                <input type="text" placeholder="9876543210" required>
+                <input type="text" placeholder="9876543210" name="phone" required>
                 
             </div>
 
@@ -50,7 +50,7 @@
 
             <div class="input-group">
                 <label for="Student_Teacher">Are you a Student or Teacher:</label>
-                <select id="Student_Teacher" name="Student_Teacher" required>
+                <select id="Student_Teacher" name="role" required>
                     <option value="">Select</option>
                     <option value="T">Teacher</option>
                     <option value="S">Student</option>
