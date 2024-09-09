@@ -2,6 +2,7 @@
   "name": "edtech",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "nodemon index.js"
   },
@@ -27,7 +28,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.2",
     "mongoose-aggregate-paginate-v2": "^1.1.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "nodemon": "^3.1.4",

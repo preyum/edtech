@@ -1,15 +1,20 @@
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const expressLayouts = require('express-ejs-layouts');
-const cors = require('cors');
+import dotenv from 'dotenv';
+dotenv.config();
+import express from 'express';
+import mongoose from 'mongoose';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import expressLayouts from 'express-ejs-layouts';
+import cors from 'cors';
+import { fileURLToPath } from 'url';
 
+// Get the current file path and directory in ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // import routes
-const authRoute = require('./routes/authRoute');
-const webRoute = require('./routes/webRoutes');
+import authRoute from './routes/authRoute.js';
+import webRoute from './routes/webRoutes.js';
 
 
 // db connection string

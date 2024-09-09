@@ -1,17 +1,19 @@
-const router = require('express').Router();
-const User = require('../models/User');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+import express from 'express';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import { registerValidation, loginValidation } from '../controllers/userValidation.js';
+import { User } from '../models/user.model.js'
+const router = express.Router();
 
 
 router.post('/register', async (req, res) => {
 
   // validation logic here
-
+  registerValidation(parse(req.body))
   // check if user already exists
   const user = await User.findOne({ email: req.body.email });
   if (user) return res.status(400).send({
-    msg: "Email Already exists"
+    msg: "Email already exists"
   });
 
   // hash the password
@@ -27,17 +29,22 @@ router.post('/register', async (req, res) => {
     password: hashPassword,
   });
   try {
-    const savedUser = await newUser.save();
-    res.send({
-      msg: "User Created"
-    });
+    await newUser.save();
+    res
+      .status(200)
+      .send({
+        msg: "User Created"
+      });
   } catch (err) {
-    res.status(502).send(err);
+    res
+      .status(502)
+      .send(
+        {
+          msg: "Error while creating user",
+          error: err
+        }
+      );
   }
-
-
-
-
 
 })
 
@@ -47,7 +54,7 @@ router.post('/signin', async (req, res) => {
 
   // check if user exists
   const user = await User.findOne({ email: req.body.email });
-  if (!user) return res.send({ msg: "User does not exist" });
+  if (!user) return res.status(400).send({ msg: "User does not exist" });
 
   // check password
   const validPass = await bcrypt.compare(req.body.password, user.password);
@@ -55,13 +62,14 @@ router.post('/signin', async (req, res) => {
 
   // create jwt token
   const token = jwt.sign({ _id: user._id }, process.env.JWT_PASS);
-  res.cookie('authToken', token, {
-    httpOnly: true
-  });
+  res
+    .status(200)
+    .cookie('authToken', token, {
+      httpOnly: true
+    })
+    .redirect('/users/welcome');
 
-  res.redirect('/users/welcome');
-    
 })
 
 
-module.exports = router;
+export default router;
