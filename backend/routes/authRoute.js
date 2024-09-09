@@ -9,7 +9,7 @@ const router = express.Router();
 router.post('/register', async (req, res) => {
 
   // validation logic here
-  registerValidation(parse(req.body))
+  registerValidation.parse(req.body)
   // check if user already exists
   const user = await User.findOne({ email: req.body.email });
   if (user) return res.status(400).send({
@@ -24,17 +24,16 @@ router.post('/register', async (req, res) => {
   const newUser = new User({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    username: req.body.username,
     email: req.body.email,
     password: hashPassword,
+    phone: req.body.phone,
+    role: req.body.role
   });
   try {
     await newUser.save();
-    res
-      .status(200)
-      .send({
-        msg: "User Created"
-      });
+    console.log("User Created");
+    
+    res.redirect('/confirmation');
   } catch (err) {
     res
       .status(502)
@@ -43,7 +42,7 @@ router.post('/register', async (req, res) => {
           msg: "Error while creating user",
           error: err
         }
-      );
+      )
   }
 
 })
