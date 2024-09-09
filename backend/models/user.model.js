@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
-const salt = bcrypt.genSalt(10);
+const salt = await bcrypt.genSalt(10);
 const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
@@ -26,6 +26,22 @@ const userSchema = new mongoose.Schema({
     required: true,
     max: 1024,
     min: 8
+  },
+  phone: {
+    type: Number,
+    trim: true,
+    validate: {
+      validator: function (v) {
+        return /\d{10}/.test(v); // Validate phone number format (10 digits)
+      },
+      message: (props) => `${props.value} is not a valid phone number!`,
+    },
+    required: true
+  },
+  role: {
+    type: String,
+    enum: ['T', 'S'], // 'T' for Teacher, 'S' for Student
+    required: true,
   },
   avatar: {
     type: String,
