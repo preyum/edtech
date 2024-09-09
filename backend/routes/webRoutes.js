@@ -1,5 +1,13 @@
 import express from 'express';
 const router = express.Router();
+import path from 'path'
+import { fileURLToPath } from 'url';
+
+
+
+// Get the current file path and directory in ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 router.get('/', (req, res) => {
   res.render('homepage', {
@@ -21,6 +29,10 @@ router.get('/about', (req, res) => {
     heading: 'About Us',
   });
 });
+
+router.get('/confirmation', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../../public/views/confirmation.html'));
+})
 
 router.get('/signin', (req, res) => {
   res.render('signin', {
