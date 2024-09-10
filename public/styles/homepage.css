@@ -10,39 +10,6 @@ body {
     margin: 0 auto;
     padding: 20px;
   }
-  
- /* header {
-    background-color: #f0f0f0;
-    color: #22668D;
-    text-align: left;
-    padding: 10px;
-}*/
-  
-  nav {
-    display: flex;
-    justify-content: right;
-    gap: 20px;
-    margin-top: 10px;
-}
-
-nav a {
-    color: #22668D;
-    text-decoration: none;
-    padding: 10px ;
-}
-
-nav a:hover {
-    /*background-color: #a085ca;*/
-    background-color: #FFCC70;
-    border-radius: 5px; 
-    color: #22668D; 
-    transform: scale(1.10);
-}
-  
-  .main {
-    padding-bottom: 100px;
-  }
-  
   .hero {
     /*display: flex;
     justify-content: space-between;

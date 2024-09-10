@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 router.get('/', (req, res) => {
   res.render('homepage', {
     title: "Scholarly",
-    heading: "Home"
+    heading: "Scholarly"
   });
 })
 
