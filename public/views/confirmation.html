@@ -4,13 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Complete</title>
-    <meta http-equiv="refresh" content="5;url=/signin"> <!-- Redirect after 5 seconds -->
+    <link rel="stylesheet" href="../styles/confirmation.css">
+    <meta http-equiv="refresh" content="10;url=/signin"> <!-- Redirect after 5 seconds -->
 </head>
 <body>
-    <div class="confirmation-container">
+    <div class="loading-container">
+        <div class="loading-icon">🙂</div>
+        <div class="loading-text">While we create an account, wait</div>
+        <div class="subtext">Leadership through emotional intelligence</div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+    <div class="confirmation-container" style="display: none;">
         <h1>Registration Complete</h1>
         <p>Thank you for registering! You will be redirected to the login page shortly.</p>
         <a href="/signin">Go to Login Page</a>
     </div>
+    <script>
+        window.onload = function() {
+    const loadingContainer = document.querySelector('.loading-container');
+    const confirmationContainer = document.querySelector('.confirmation-container');
+  
+   
+    setTimeout(() => {
+      loadingContainer.style.display = 'none';
+      confirmationContainer.style.display = 'block';
+    }, 5000);
+  };
+    </script>
 </body>
 </html>
