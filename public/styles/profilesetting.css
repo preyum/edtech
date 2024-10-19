@@ -1,0 +1,96 @@
+body {
+    background: #1b1a1b; /* Light purple background */
+    color: #fff; /* White text for better contrast */
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif; /* Modern font family */
+}
+
+.ui-w-80 {
+    width: 80px !important;
+    height: auto;
+}
+
+.btn-default {
+    border-color: rgba(24, 28, 33, 0.1);
+    background: rgba(0, 0, 0, 0);
+    color: #4E5155;
+}
+
+label.btn {
+    margin-bottom: 0;
+}
+
+.btn-outline-primary {
+    border-color: #fff; /* White for outline */
+    background: transparent;
+    color: #fff; /* White text for better visibility */
+}
+
+.btn {
+    cursor: pointer;
+    border-radius: 30px; /* Rounded buttons for modern look */
+    padding: 10px 20px; /* Increased padding for buttons */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.text-light {
+    color: #fff !important;
+}
+
+.btn-facebook {
+    background: #3B5998;
+    color: #fff;
+}
+
+.btn-instagram {
+    background: #000;
+    color: #fff;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for cards */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners for modern look */
+}
+
+.row-bordered {
+    overflow: hidden;
+}
+
+.account-settings-fileinput {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+    color: #800080 !important; /* Purple for active link */
+    background: rgba(255, 255, 255, 0.2); /* Light background for active item */
+}
+
+.account-settings-links .list-group-item {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.account-settings-links .list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+    color: #800080; /* Purple text on hover */
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(128, 0, 128, 0.03) !important; /* Light purple border */
+}
+
+.account-settings-links .list-group-item.active {
+    background-color: rgba(128, 0, 128, 0.3); /* Purple for active */
+    color: #800080; /* Purple */
+}
+
+.account-settings-links .list-group-item:hover {
+    background-color: rgba(128, 0, 128, 0.1); /* Light purple on hover */
+    color: #800080; /* Purple */
+}
