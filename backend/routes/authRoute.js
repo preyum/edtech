@@ -3,10 +3,28 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { registerValidation, loginValidation } from '../controllers/userValidation.js';
 import { User } from '../models/user.model.js'
+import { upload } from '../middlewares/multer.middleware.js';
+import { uploadOnCloudinary } from '../utils/clodinary.service.js';
 const router = express.Router();
 
 
-router.post('/register', async (req, res) => {
+router.post('/register', upload.fields([{ name: 'photo', maxCount: 1 }]),  async (req, res) => {
+
+   // Optional image upload logic
+  let imageUrl;
+  if (req.files && req.files.photo) {
+    try {
+      const localFilePath = req.files.photo[0].path;
+      console.log("file path from server: ", localFilePath);
+      imageUrl = await uploadOnCloudinary(localFilePath);
+      console.log('File uploaded successfully!');
+    } catch (err) {
+      return res.status(500).json({
+        msg: 'File upload failed.',
+        error: err
+      });
+    }
+  }
 
   // validation logic here
   registerValidation.parse(req.body)
@@ -27,12 +45,13 @@ router.post('/register', async (req, res) => {
     email: req.body.email,
     password: hashPassword,
     phone: req.body.phone,
-    role: req.body.role
+    role: req.body.role,
+    avatar: req.files && req.files.photo ? imageUrl : undefined
   });
   try {
     await newUser.save();
     console.log("User Created");
-    
+
     res.redirect('/confirmation');
   } catch (err) {
     res
@@ -44,7 +63,6 @@ router.post('/register', async (req, res) => {
         }
       )
   }
-
 })
 
 
