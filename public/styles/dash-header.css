@@ -16,7 +16,7 @@
     color: #ffffff;
   }
   
-  .logo img {
+  .navbar-logo img {
     max-width: 150px;
   }
   
@@ -67,7 +67,7 @@
       flex-direction: column;
     }
   
-    .logo img {
+    .navbar-logo img {
       margin-bottom: 20px;
     }
   }
