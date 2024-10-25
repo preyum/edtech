@@ -1,74 +1,79 @@
-/* Resetting default margins and paddings */
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  } */
-  
-  /* Navbar styling */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #003366;
-    color: #ffffff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #003366;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
+}
+
+body {
+  padding-top: 60px;
+}
+
+#navbar-logo img {
+  max-width: 150px;
+}
+
+#nav-links {
+  display: flex;
+  list-style: none;
+}
+
+#nav-links li {
+  margin-left: 30px;
+}
+
+#nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#nav-links a:hover {
+  color: #FFD700;
+}
+
+#nav-btn .btn {
+  padding: 10px 20px;
+  background-color: #FFD700;
+  color: #003366;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#nav-btn .btn:hover {
+  background-color: #003366;
+  color: #FFD700;
+}
+
+@media (max-width: 768px) {
+  #nav-links {
+    display: none;
   }
-  
-  .navbar-logo img {
-    max-width: 150px;
+
+  #navbar {
+    flex-direction: column;
   }
-  
-  .nav-links {
-    display: flex;
-    list-style: none;
+
+  #navbar-logo img {
+    margin-bottom: 20px;
   }
-  
-  .nav-links li {
-    margin-left: 30px;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #FFD700;
-  }
-  
-  /* Button styling */
-  .nav-btn .btn {
-    padding: 10px 20px;
-    background-color: #FFD700;
-    color: #003366;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .nav-btn .btn:hover {
-    background-color: #003366;
-    color: #FFD700;
-  }
-  
-  /* Responsive Navbar */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-    }
-  
-    .navbar {
-      flex-direction: column;
-    }
-  
-    .navbar-logo img {
-      margin-bottom: 20px;
-    }
-  }
-  
+}
