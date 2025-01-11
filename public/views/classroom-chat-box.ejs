@@ -17,7 +17,6 @@
     </header>
     
     <section class="chat-content" id="chat-content"></section>
-
     <footer class="chat-footer">
       <input type="text" id="input-message" placeholder="Paste your class link here..." aria-label="Paste your class link">
       <button id="send-link-btn">Send Link</button>
@@ -26,17 +25,14 @@
       </label>
       <input type="file" id="file-upload" accept=".pdf,.doc,.docx" />
     </footer>
-
     <div class="popup hidden" id="popup">
       <p>Class link copied!</p>
     </div>
   </div>
-
   <script>
     document.getElementById('send-link-btn').addEventListener('click', function() {
       const chatContent = document.getElementById('chat-content');
       const inputMessage = document.getElementById('input-message').value.trim();
-
       if (inputMessage) {
         const linkMessage = document.createElement('div');
         linkMessage.classList.add('message');
@@ -46,11 +42,9 @@
         document.getElementById('input-message').value = ''; // Clear the input field after sending the message
       }
     });
-
     document.getElementById('file-upload').addEventListener('change', function() {
       const file = this.files[0];
       const chatContent = document.getElementById('chat-content');
-
       if (file) {
         const fileMessage = document.createElement('div');
         fileMessage.classList.add('message');
