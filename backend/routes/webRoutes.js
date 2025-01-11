@@ -69,6 +69,22 @@ router.get('/dashboard', (req, res) => {
     heading: "Dashboard"
   })
 })
+router.get('/profile-settings', (req, res) => {
+  res.render('profile-settings', {
+    layout: './layouts/dash-layout',
+    title: "profile-settings",
+    heading: "profile-settings"
+  })
+})
+
+router.get('/Links', (req, res) => {
+  res.render('classroom-chat-box', {
+    layout: './layouts/dash-layout',
+    title: "classroom-chat-box",
+    heading: "classroom-chat-box"
+  })
+})
+
 
 
 router.get('/logout', (req, res) => {
