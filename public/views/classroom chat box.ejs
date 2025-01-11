@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classroom Chat UI</title>
+  <link rel="stylesheet" href="classroom chat box.css">
+</head>
+<body>
+  <div class="chat-container">
+    <header class="header">
+      <h1>Classroom Chat</h1>
+      <nav>
+        <button id="home-btn">Home</button>
+        <button id="courses-btn">Courses</button>
+      </nav>
+    </header>
+    
+    <section class="chat-content" id="chat-content"></section>
+
+    <footer class="chat-footer">
+      <input type="text" id="input-message" placeholder="Paste your class link here..." aria-label="Paste your class link">
+      <button id="send-link-btn">Send Link</button>
+      <label for="file-upload" class="custom-file-upload">
+        Upload File
+      </label>
+      <input type="file" id="file-upload" accept=".pdf,.doc,.docx" />
+    </footer>
+
+    <div class="popup hidden" id="popup">
+      <p>Class link copied!</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('send-link-btn').addEventListener('click', function() {
+      const chatContent = document.getElementById('chat-content');
+      const inputMessage = document.getElementById('input-message').value.trim();
+
+      if (inputMessage) {
+        const linkMessage = document.createElement('div');
+        linkMessage.classList.add('message');
+        linkMessage.innerHTML = `<p>Class Link: <a href="${inputMessage}" target="_blank">${inputMessage}</a></p>`;
+        chatContent.appendChild(linkMessage);
+        chatContent.scrollTop = chatContent.scrollHeight;
+        document.getElementById('input-message').value = ''; // Clear the input field after sending the message
+      }
+    });
+
+    document.getElementById('file-upload').addEventListener('change', function() {
+      const file = this.files[0];
+      const chatContent = document.getElementById('chat-content');
+
+      if (file) {
+        const fileMessage = document.createElement('div');
+        fileMessage.classList.add('message');
+        fileMessage.innerHTML = `<p>File Uploaded: ${file.name}</p>`;
+        chatContent.appendChild(fileMessage);
+        chatContent.scrollTop = chatContent.scrollHeight;
+      }
+    });
+  </script>
+</body>
+</html>
