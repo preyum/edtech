@@ -68,7 +68,16 @@ router.post('/register', upload.fields([{ name: 'photo', maxCount: 1 }]),  async
 
 router.post('/signin', async (req, res) => {
   // validate data
-
+  const result = loginValidation.safeParse(req.body);
+  if(!result.success)
+  {
+     // Format errors as field-specific object
+    const errors = result.error.errors.reduce((acc, err) => {
+      acc[err.path[0]] = err.message; // Map path to message
+      return acc;
+    }, {});
+    return res.status(400).json(errors);
+  }
   // check if user exists
   const user = await User.findOne({ email: req.body.email });
   if (!user) return res.status(400).send({ msg: "User does not exist" });
