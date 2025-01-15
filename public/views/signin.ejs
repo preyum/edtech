@@ -3,12 +3,14 @@
 
 <body>
     <div class="signin-container">
-        <form action="/users/signin" method="POST">
+        <form id="loginForm">
             <div class="input-group">
+                <div class="error" id="emailError"></div>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="input-group">
+                <div class="error" id="passwordError"></div>
                 <label for="password">Password</label>
                 <div class="password-wrapper">
                     <input type="password" id="password" name="password" required>
@@ -18,6 +20,7 @@
                 </div>
             </div>
             <button type="submit" class="signin-button">Sign In</button>
+            <div id="formError" class="error"></div>
         </form>
         <p class="register-link">Not a user? <a href="/register">Register here</a></p>
     </div>
@@ -26,7 +29,7 @@
 
 
 <script>
-    document.getElementById('togglePassword').addEventListener('click', function () {
+    function eyeButton(){
         const passwordField = document.getElementById('password');
         const icon = this.querySelector('i');
 
@@ -37,6 +40,48 @@
         // Toggle the Font Awesome icon classes
         icon.classList.toggle('fa-eye');
         icon.classList.toggle('fa-eye-slash');
-    });
+    }
+    document.getElementById('togglePassword').addEventListener('click', eyeButton);
 
+    const form = document.getElementById('loginForm')
+    const emailError = document.getElementById('emailError')
+    const passError = document.getElementById('passwordError')
+    const formError = document.getElementById('formError')
+    form.addEventListener('submit', async(event)=>{
+        event.preventDefault();
+
+        emailError.textContent = "";
+        passError.textContent = "";
+        formError.textContent = "";
+
+        const formData = new FormData(form);
+        console.log(formData);
+        
+        const data = {
+            email: formData.get('email'),
+            password: formData.get('password')
+        }
+
+        try {
+            const response = await fetch('/users/signin',{
+                method: "POST",
+                headers: { "Content-Type" : "application/json" },
+                body: JSON.stringify(data)
+            });
+
+            if(response.redirected) window.location.href = response.url;
+
+            if(!response.ok){
+                const errors = await response.json();
+
+                if(errors.email) emailError.textContent = errors.email;
+                if(errors.password) passError.textContent = errors.password;
+                if(errors.msg) formError.textContent = errors.msg;
+                
+            }
+        } catch (error) {
+           console.log("Error during login", error);
+           alert("Something went wrong"); 
+        }
+    })
 </script>
