@@ -1,0 +1,58 @@
+
+  <link rel="stylesheet" href="../styles/adminpanel.css">
+
+<body>
+  <div class="dashboard">
+    
+    <aside class="sidebar">
+      <h2>Admin Panel</h2>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#users">Manage Users</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#logout">Logout</a></li>
+      </ul>
+    </aside>
+
+    
+    <main class="main-content">
+    
+      <header class="navbar">
+        <h1>Welcome, Admin</h1>
+        
+      </header>
+
+      
+      <section class="content">
+        <div class="overview">
+          <div class="card">
+            <h3>Total Users</h3>
+            <p id="total-users">Loading...</p>
+          </div>
+          
+        </div>
+
+        
+        <div class="data-table">
+          <h2>User Management</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Courses Bought</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="user-table">
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
