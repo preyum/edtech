@@ -2,8 +2,7 @@
 .training-section {
     width: 100%;
     min-height: 100vh; /* Ensure the section takes up at least the full viewport height */
-    background-image: linear-gradient(rgba(156, 80, 237, 0.65), rgba(51, 7, 89, 0.65)), 
-                      url("img/—Pngtree—square\ purple\ white_1600443.png");
+    background-color: #FFFADD;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -17,12 +16,12 @@
 .training-section h1 {
     text-align: center;
     padding: 25px 0;
-    color: #ffffff;
+    color: #22668D;
     font-size: 2.5rem; /* Larger font size */
     font-weight: 700; /* Bold text */
     text-transform: uppercase; /* Uppercase text */
     letter-spacing: 2px; /* Spacing between letters */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Adds a subtle shadow for better readability */
+    
 }
 
 .container {
@@ -51,23 +50,33 @@
     max-width: 150px; /* Consistent image sizing */
     margin-bottom: 15px;
     border-radius: 5px;
+    
+}
+.training-item:hover img{
+    background-color: white;
+    transform: scale(1.05); /* Added slight zoom on hover */
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+
+
+    
 }
 
 .training-item h3 {
     padding: 10px 0;
-    color: black;
+    color:#22668D;
 }
 
 .training-item p {
     font-size: 14px;
     padding: 10px;
-    color: #333;
+    color: #22668D;
 }
 
 .training-item button {
-    background: #6600cc;
+    background: #F2B646;
     padding: 10px 25px;
-    color: #fff;
+    color: #22668D;
     font-size: medium;
     border: none;
     border-radius: 10px;
@@ -77,18 +86,18 @@
 }
 
 .training-item:hover {
-    background: lightskyblue;
+    background: #8ECDDD;
     transform: scale(1.05); /* Added slight zoom on hover */
 }
 
 .training-item:hover h3,
-.training-item:hover p {
-    color: black;
+.training-item:hover p{
+    color: white;
 }
 
 .training-item:hover button {
-    color: white;
-    background: black;
+    color: #F2B646;
+    background: white;
 }
 
 /* Media Queries for Responsiveness */
