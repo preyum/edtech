@@ -1,3 +1,4 @@
+/* Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +6,16 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+  padding-top: 60px;
+}
+
 #navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #003366;
+  background-color: #8ECDDD; /* Updated from #003366 */
   color: #ffffff;
   position: fixed;
   top: 0;
@@ -18,10 +23,6 @@
   width: 100%;
   z-index: 1000;
   height: 60px;
-}
-
-body {
-  padding-top: 60px;
 }
 
 #navbar-logo img {
@@ -39,20 +40,24 @@ body {
 
 #nav-links a {
   text-decoration: none;
-  color: #ffffff;
+  color: #22668D; /* Updated color */
   font-size: 16px;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 8px 15px;
+  background-color: #FFFADD; /* Updated from original colors */
+  border-radius: 4px;
 }
 
 #nav-links a:hover {
-  color: #FFD700;
+  color: #22668D; /* Ensure text stays visible */
+  background-color: #FFCC70; /* Highlight color */
 }
 
 #nav-btn .btn {
   padding: 10px 20px;
-  background-color: #FFD700;
-  color: #003366;
+  background-color: #FFD700; /* Yellow button */
+  color: #003366; /* Dark color for button text */
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
@@ -60,10 +65,11 @@ body {
 }
 
 #nav-btn .btn:hover {
-  background-color: #003366;
-  color: #FFD700;
+  background-color: #003366; /* Dark color on hover */
+  color: #FFD700; /* Yellow text color on hover */
 }
 
+/* Media Queries for Mobile */
 @media (max-width: 768px) {
   #nav-links {
     display: none;

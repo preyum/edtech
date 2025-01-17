@@ -8,83 +8,14 @@
 }
 
 body {
-  background: #f5f5f5;
+  background: #EAEAEA;
   padding: 20px;
   display: flex;
 }
 
 h1, h2 {
   font-size: 24px;
-  color: #333;
-}
-
-.sidebar-container-custom {
-  display: flex;
-  position: fixed;
-  height: 100vh;
-  transform: translateX(-10px);
-}
-
-nav {
-  background: #cbb3e2;
-  width: 80px;
-  height: 100%;
-  position: fixed;
-  transition: width 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transform: translateX(-10px);
-}
-
-nav:hover {
-  width: 200px;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li a {
-  display: flex;
-  align-items: center;
-  padding: 15px 10px;
-  color: #18215e;
-  text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-li a:hover {
-  background-color: #7632a0;
-  color: #fff;
-}
-
-li a i {
-  min-width: 40px;
-  text-align: center;
-  font-size: 20px;
-}
-
-li a .custom-nav-item {
-  margin-left: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  white-space: nowrap;
-}
-
-nav:hover .custom-nav-item {
-  opacity: 1;
-}
-
-.custom-logo img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-}
-
-.custom-logout {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
+  color: #2E3B4E;
 }
 
 .cards-wrapper {
@@ -93,82 +24,102 @@ nav:hover .custom-nav-item {
   gap: 20px;
   justify-content: flex-start;
   padding: 20px;
-  margin-left: 300px;  /* Push content to the right to avoid sidebar overlap */
-  width: calc(100% - 300px);  /* Ensure content takes the remaining width */
+  margin-left: 300px;
+  width: calc(100% - 300px);
 }
 
 .card-container {
-  width: 350px; /* Increased size of the cards */
-  height: 350px; /* Increased size of the cards */
-  perspective: 2000px;
+  width: 350px;
+  height: 380px;
 }
 
 .card {
   width: 100%;
   height: 100%;
   position: relative;
-  transform-style: preserve-3d;
-  transition: transform 1.5s ease-in-out; /* Slowed down transition speed */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #2E3B4E;
+}
+
+.card .discount {
+  font-size: 16px;
+  color: #D9534F;
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+
+.card .price {
+  font-size: 20px;
+  color: #28A745;
+  font-weight: 600;
+  padding-left: 5px;
+}
+
+.card .price:hover {
+  color: #F39C12;
+  font-size: 22px;
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+.card .view-details {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card .view-details:hover {
+  background-color: #0056b3;
 }
 
 .card:hover {
-  transform: rotateY(180deg);
+  background: #D1E8E2;
+  transform: scale(1.05);
 }
 
-.card-side {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.card:hover p, .card:hover .discount {
+  color: #2E3B4E;
 }
 
-.card-front {
+.card:hover .view-details {
   background-color: white;
-  overflow: hidden;
-}
-
-.card-front img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-back {
-  background-color: #8ECDDD;
-  color: white;
-  transform: rotateY(180deg);
-  padding: 15px;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.6;
+  color: #007BFF;
 }
 
 @media (max-width: 768px) {
   .cards-wrapper {
     justify-content: center;
-    margin-left: 0; /* Remove the margin for smaller screens */
+    margin-left: 0;
     width: 100%;
   }
 
-  .sidebar-container-custom {
-    position: relative;
+  .card-container {
     width: 100%;
     height: auto;
-  }
-
-  nav {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-
-  nav:hover {
-    width: 100%;
   }
 }
