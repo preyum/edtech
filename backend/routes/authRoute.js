@@ -27,7 +27,7 @@ router.post('/register', upload.fields([{ name: 'photo', maxCount: 1 }]),  async
   }
 
   // validation logic here
-  registerValidation.safeParse(req.body)
+  const result = registerValidation.safeParse(req.body)
   if(!result.success)
   {
      // Format errors as field-specific object
@@ -54,7 +54,7 @@ router.post('/register', upload.fields([{ name: 'photo', maxCount: 1 }]),  async
     email: req.body.email,
     password: hashPassword,
     phone: req.body.phone,
-    role: req.body.role,
+   // role: req.body.role,
     avatar: req.files && req.files.photo ? imageUrl : undefined
   });
   try {
@@ -96,7 +96,7 @@ router.post('/signin', async (req, res) => {
   if (!validPass) return res.status(400).send({ msg: "Invalid password" });
 
   // create jwt token
-  const token = jwt.sign({ _id: user._id, name: user.firstName, role: role }, process.env.JWT_PASS);
+  const token = jwt.sign({ _id: user._id, name: user.firstName, role: user.role }, process.env.JWT_PASS);
   res
     .status(200)
     .cookie('authToken', token, {
