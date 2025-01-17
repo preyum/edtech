@@ -41,6 +41,7 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     enum: ['T', 'S'], // 'T' for Teacher, 'S' for Student
+    default: 'S',
     required: true,
   },
   avatar: {
