@@ -27,7 +27,16 @@ router.post('/register', upload.fields([{ name: 'photo', maxCount: 1 }]),  async
   }
 
   // validation logic here
-  registerValidation.parse(req.body)
+  registerValidation.safeParse(req.body)
+  if(!result.success)
+  {
+     // Format errors as field-specific object
+    const errors = result.error.errors.reduce((acc, err) => {
+      acc[err.path[0]] = err.message; // Map path to message
+      return acc;
+    }, {});
+    return res.status(400).json(errors);
+  }
   // check if user already exists
   const user = await User.findOne({ email: req.body.email });
   if (user) return res.status(400).send({
@@ -93,7 +102,7 @@ router.post('/signin', async (req, res) => {
     .cookie('authToken', token, {
       httpOnly: true
     })
-    .redirect('/users/welcome');
+    .redirect('/dashboard');
 
 })
 

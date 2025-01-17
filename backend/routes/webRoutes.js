@@ -2,6 +2,7 @@ import express from 'express';
 const router = express.Router();
 import path from 'path'
 import { fileURLToPath } from 'url';
+import { auth } from '../middlewares/auth.middleware.js';
 
 
 
@@ -62,14 +63,14 @@ router.get('/users/welcome', (req, res) => {
   });
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', auth, (req, res) => {
   res.render('dashboard', {
     layout: './layouts/dash-layout',
     title: "Dashboard",
     heading: "Dashboard"
   })
 })
-router.get('/profile-settings', (req, res) => {
+router.get('/profile-settings', auth, (req, res) => {
   res.render('profile-settings', {
     layout: './layouts/dash-layout',
     title: "profile-settings",
@@ -77,7 +78,7 @@ router.get('/profile-settings', (req, res) => {
   })
 })
 
-router.get('/Links', (req, res) => {
+router.get('/links', auth, (req, res) => {
   res.render('classroom-chat-box', {
     layout: './layouts/dash-layout',
     title: "classroom-chat-box",
