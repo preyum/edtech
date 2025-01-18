@@ -144,6 +144,7 @@ router.get('/courses/react', auth, (req, res) => {
 });
 router.get('/logout', (req, res) => {
   res.cookie('authToken', '', {
+    httpOnly: true,
     maxAge: 1
   })
     .redirect('/');
