@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color:#22668D;
+    background-color: #FFFADD;
+}
+
+.header {
+    background-color: #22668D;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #F2B646;
+}
+
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFFADD;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #8ECDDD;
+}
+
+p {
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li::before {
+    content: "•";
+    color: #22668D;
+    margin-right: 8px;
+}
+
+.highlight {
+    color: #22668D;
+}
+
+.buy-now {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.buy-now button {
+    background-color: #22668D;
+    color: #FFFADD;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-now button:hover {
+    background-color: #2563EB;
+}
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    p, ul li {
+        font-size: 1rem;
+    }
+
+    .buy-now button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    p, ul li {
+        font-size: 0.9rem;
+    }
+
+    .buy-now button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}

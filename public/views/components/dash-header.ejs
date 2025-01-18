@@ -1,22 +1,56 @@
-<link rel="stylesheet" href="../../styles/dash-header.css">
+<link rel="stylesheet" href="../../styles/dash-header.css" />
 <body>
-  <!-- Navbar Section -->
   <header id="header">
     <nav class="navbar" id="navbar">
       <div class="navbar-logo" id="navbar-logo">
-        <a href="#" id="logo-link"><img src="institution-logo.png" alt="Institution Logo" id="logo-img"></a>
+        <!-- Logo Placeholder -->
+        <a href="/dashboard" id="logo-link"
+          ><img src="institution-logo.png" alt="Institution Logo" id="logo-img"
+        /></a>
       </div>
-      <ul class="nav-links" id="nav-links">
-        <li id="nav-home"><a href="#">Home</a></li>
-        <li id="nav-about"><a href="/about">About Us</a></li>
-        <li id="nav-settings"><a href="/profile-settings">Settings</a></li> <!-- Settings Link -->
-        <li id="nav-courses"><a href="courses">Courses</a></li> <!-- Courses Link -->
-        <li id="nav-classroom"><a href="/links">Links</a></li> <!-- Added Classroom Link -->
-        <li id="nav-contact"><a href="/contact">Contact</a></li>
-      </ul>
-      <div class="nav-btn" id="nav-btn">
-        <a href="/logout" class="btn" id="login-btn">Logout</a>
+      <div class="profile-container" id="profile-container">
+        <!-- Profile Picture -->
+        <div class="profile-picture" id="profile-picture"></div>
+        <!-- Dropdown Menu -->
+        <ul class="dropdown-menu" id="dropdown-menu">
+          <li><a href="/dashboard">Home</a></li>
+          <li><a href="/links">Links</a></li>
+          <li><a href="/profile-settings">Settings</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
       </div>
     </nav>
   </header>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const profileContainer = document.getElementById("profile-container");
+      const profilePicture = document.getElementById("profile-picture");
+      const dropdownMenu = document.getElementById("dropdown-menu");
+
+      // Toggle dropdown on profile picture click
+      profilePicture.addEventListener("click", () => {
+        profileContainer.classList.toggle("active");
+      });
+
+      // Close the dropdown if clicked outside
+      document.addEventListener("click", (event) => {
+        if (!profileContainer.contains(event.target)) {
+          profileContainer.classList.remove("active");
+        }
+      });
+
+      // Example: Set profile picture from localStorage
+      const userData = JSON.parse(localStorage.getItem("userData"));
+      if (userData && userData.avatar) {
+        profilePicture.style.backgroundImage = `url(${userData.avatar})`;
+      }
+    });
+
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    // Update the UI with user's profile picture
+    const profilePicture = document.getElementById("profile-picture");
+    if (profilePicture && userData.avatar) {
+      profilePicture.style.backgroundImage = `url(${userData.avatar})`;
+    }
+  </script>
 </body>

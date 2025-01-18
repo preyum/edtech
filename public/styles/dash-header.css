@@ -25,6 +25,12 @@ body {
   height: 60px;
 }
 
+#navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #navbar-logo img {
   max-width: 150px;
 }
@@ -68,6 +74,98 @@ body {
   background-color: #003366; /* Dark color on hover */
   color: #FFD700; /* Yellow text color on hover */
 }
+
+/* Profile Container */
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push to the right */
+}
+
+/* Profile Picture */
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none; /* Initially hidden */
+  position: absolute;
+  right: 0;
+  top: 50px; /* Position below the profile picture */
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Subtle gradient */
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Smooth rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Elegant shadow */
+  list-style: none;
+  padding: 10px 0;
+  z-index: 1000;
+  min-width: 160px; /* Set a fixed width */
+  overflow: hidden; /* Prevent content overflow */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth appearance */
+  transform: scale(0.95); /* Slightly scaled down when hidden */
+  opacity: 0; /* Invisible when hidden */
+}
+
+.profile-container.active .dropdown-menu {
+  display: block;
+  transform: scale(1); /* Scale to full size */
+  opacity: 1; /* Fully visible */
+}
+
+/* Dropdown Items */
+.dropdown-menu li {
+  padding: 10px 20px;
+  text-align: left;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #22668D;
+  font-size: 14px;
+  display: block;
+  font-weight: bold;
+  transition: color 0.3s, background-color 0.3s, padding-left 0.3s ease;
+  border-radius: 6px; /* Rounded hover effect */
+}
+
+.dropdown-menu li a:hover {
+  background-color: #FFCC70;
+  color: #003366;
+  padding-left: 25px; /* Adds a sliding effect */
+}
+
+/* Add a separator between items */
+.dropdown-menu li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+/* Profile Picture Enhancements */
+.profile-picture {
+  width: 50px; /* Increased size */
+  height: 50px; /* Increased size */
+  border-radius: 50%;
+  background-color: #ccc;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #fff; /* Thicker border */
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.profile-picture:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle hover shadow */
+  transform: scale(1.1); /* Slightly enlarges on hover */
+}
+
 
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
