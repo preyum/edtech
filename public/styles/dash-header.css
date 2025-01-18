@@ -25,8 +25,21 @@ body {
   height: 60px;
 }
 
-#navbar-logo img {
-  max-width: 150px;
+#navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-picture {
+  width: 40px; /* Set the size */
+  height: 40px; /* Set the size */
+  border-radius: 50%; /* Circular shape */
+  background-color: #ccc; /* Placeholder color */
+  background-image: url('placeholder-image.png'); /* Placeholder image */
+  background-size: cover; /* Make the image cover the area */
+  background-position: center; /* Center the image */
+  border: 2px solid #fff; /* Optional: add a white border */
 }
 
 #nav-links {

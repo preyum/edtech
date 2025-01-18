@@ -96,13 +96,12 @@ router.post('/signin', async (req, res) => {
   if (!validPass) return res.status(400).send({ msg: "Invalid password" });
 
   // create jwt token
-  const token = jwt.sign({ _id: user._id, name: user.firstName, role: user.role }, process.env.JWT_PASS);
+  const token = jwt.sign({ _id: user._id }, process.env.JWT_PASS);
   res
     .status(200)
     .cookie('authToken', token, {
-      httpOnly: true
     })
-    .redirect('/dashboard');
+    .json({name: user.firstName, avatar: user.avatar, role: user.role});
 })
 
 

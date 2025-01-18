@@ -1,87 +1,104 @@
-<link rel="stylesheet" href="../styles/signin.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="../styles/signin.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
 
 <body>
-    <div class="signin-container">
-        <form id="loginForm">
-            <div class="input-group">
-                <div class="error" id="emailError"></div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="input-group">
-                <div class="error" id="passwordError"></div>
-                <label for="password">Password</label>
-                <div class="password-wrapper">
-                    <input type="password" id="password" name="password" required>
-                    <button type="button" id="togglePassword" class="toggle-password">
-                        <i class="fa-solid fa-eye-slash"></i>
-                    </button>
-                </div>
-            </div>
-            <button type="submit" class="signin-button">Sign In</button>
-            <div id="formError" class="error"></div>
-        </form>
-        <p class="register-link">Not a user? <a href="/register">Register here</a></p>
-    </div>
+  <div class="signin-container">
+    <form id="loginForm">
+      <div class="input-group">
+        <div class="error" id="emailError"></div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="input-group">
+        <div class="error" id="passwordError"></div>
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" name="password" required />
+          <button type="button" id="togglePassword" class="toggle-password">
+            <i class="fa-solid fa-eye-slash"></i>
+          </button>
+        </div>
+      </div>
+      <button type="submit" class="signin-button">Sign In</button>
+      <div id="formError" class="error"></div>
+    </form>
+    <p class="register-link">
+      Not a user? <a href="/register">Register here</a>
+    </p>
+  </div>
 </body>
 
-
-
 <script>
-    function eyeButton(){
-        const passwordField = document.getElementById('password');
-        const icon = this.querySelector('i');
+  function eyeButton() {
+    const passwordField = document.getElementById("password");
+    const icon = this.querySelector("i");
 
-        // Toggle the type attribute
-        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordField.setAttribute('type', type);
+    // Toggle the type attribute
+    const type =
+      passwordField.getAttribute("type") === "password" ? "text" : "password";
+    passwordField.setAttribute("type", type);
 
-        // Toggle the Font Awesome icon classes
-        icon.classList.toggle('fa-eye');
-        icon.classList.toggle('fa-eye-slash');
+    // Toggle the Font Awesome icon classes
+    icon.classList.toggle("fa-eye");
+    icon.classList.toggle("fa-eye-slash");
+  }
+  document
+    .getElementById("togglePassword")
+    .addEventListener("click", eyeButton);
+
+  const form = document.getElementById("loginForm");
+  const emailError = document.getElementById("emailError");
+  const passError = document.getElementById("passwordError");
+  const formError = document.getElementById("formError");
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    emailError.textContent = "";
+    passError.textContent = "";
+    formError.textContent = "";
+
+    const formData = new FormData(form);
+    console.log(formData);
+
+    const data = {
+      email: formData.get("email"),
+      password: formData.get("password"),
+    };
+
+    try {
+      const response = await fetch("/users/signin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      // if(response.redirected) window.location.href = response.url;
+
+      if (!response.ok) {
+        const errors = await response.json();
+
+        if (errors.email) emailError.textContent = errors.email;
+        if (errors.password) passError.textContent = errors.password;
+        if (errors.msg) formError.textContent = errors.msg;
+      } else {
+        const userData = await response.json(); // Parse the JSON response
+
+        // Store user data in localStorage
+        localStorage.setItem("userData", JSON.stringify(userData));
+
+        // verify the stored data
+        console.log(
+          "Stored User Data:",
+          JSON.parse(localStorage.getItem("userData"))
+        );
+        window.location.href = "/dashboard";
+      }
+    } catch (error) {
+      console.log("Error during login", error);
+      alert("Something went wrong");
     }
-    document.getElementById('togglePassword').addEventListener('click', eyeButton);
-
-    const form = document.getElementById('loginForm')
-    const emailError = document.getElementById('emailError')
-    const passError = document.getElementById('passwordError')
-    const formError = document.getElementById('formError')
-    form.addEventListener('submit', async(event)=>{
-        event.preventDefault();
-
-        emailError.textContent = "";
-        passError.textContent = "";
-        formError.textContent = "";
-
-        const formData = new FormData(form);
-        console.log(formData);
-        
-        const data = {
-            email: formData.get('email'),
-            password: formData.get('password')
-        }
-
-        try {
-            const response = await fetch('/users/signin',{
-                method: "POST",
-                headers: { "Content-Type" : "application/json" },
-                body: JSON.stringify(data)
-            });
-
-            if(response.redirected) window.location.href = response.url;
-
-            if(!response.ok){
-                const errors = await response.json();
-
-                if(errors.email) emailError.textContent = errors.email;
-                if(errors.password) passError.textContent = errors.password;
-                if(errors.msg) formError.textContent = errors.msg;
-                
-            }
-        } catch (error) {
-           console.log("Error during login", error);
-           alert("Something went wrong"); 
-        }
-    })
+  });
 </script>

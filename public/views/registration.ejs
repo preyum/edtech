@@ -3,7 +3,7 @@
 
 <body>
     <div class="registration-container">
-        <form action="/users/register" method="POST" enctype="multipart/form-data">
+        <form id="registrationForm">
             <div class="input-group">
 
                 <label for="photo">Photo</label>
@@ -27,6 +27,7 @@
             </div>
 
             <div class="input-group">
+                <div class="error" id="emailError"></div>
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="johnsnow@xyz.com" name="email" required>
 
@@ -40,6 +41,7 @@
 
             <div class="input-group">
                 <label for="password">Password</label>
+                 <div class="error" id="passwordError"></div>
                 <div class="password-wrapper">
                     <input type="password" id="password" placeholder="abcd@1234" name="password" required>
                     <button type="button" id="togglePassword" class="toggle-password">
@@ -49,15 +51,10 @@
             </div>
 
             <div class="input-group">
-                <!-- <label for="Student_Teacher">Are you a Student or Teacher:</label>
-                <select id="Student_Teacher" name="role" required>
-                    <option value="">Select</option>
-                    <option value="T">Teacher</option>
-                    <option value="S">Student</option> -->
-                </select>
             </div>
 
             <button type="submit" class="register-button">Register</button>
+            <div id="formError" class="error"></div>
         </form>
 
     </div>
@@ -78,5 +75,44 @@
         icon.classList.toggle('fa-eye');
         icon.classList.toggle('fa-eye-slash');
     });
+
+    const form = document.getElementById('registrationForm')
+    const emailError = document.getElementById('emailError')
+    const passError = document.getElementById('passwordError')
+    const formError = document.getElementById('formError')
+    form.addEventListener('submit', async(event)=>{
+        event.preventDefault();
+
+        emailError.textContent = "";
+        passError.textContent = "";
+        formError.textContent = "";
+
+        const formData = new FormData(form);
+        console.log(formData);
+        
+
+        try {
+            const response = await fetch('/users/register',{
+                method: 'POST',
+                body: formData
+            });
+            
+
+            if(response.redirected) window.location.href = response.url;
+
+            if(!response.ok){
+                const errors = await response.json();
+
+                if(errors.email) emailError.textContent = errors.email;
+                if(errors.password) passError.textContent = errors.password;
+                if(errors.msg) formError.textContent = errors.msg;
+                
+            }
+        } catch (error) {
+           console.log("Error during login", error);
+           alert("Something went wrong"); 
+        }
+    })
+
 
 </script>
