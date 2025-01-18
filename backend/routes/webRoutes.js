@@ -85,9 +85,63 @@ router.get('/links', auth, (req, res) => {
     heading: "classroom-chat-box"
   })
 })
+router.get('/courses/cpp', auth, (req, res) => {
+  res.render('coursedetailsc++', {
+    layout: './layouts/dash-layout',
+    title: "C++",
+    heading: "C++"
+  })
+});
+router.get('/courses/dotnet', auth, (req, res) => {
+  res.render('coursedetaildotnet', {
+    layout: './layouts/dash-layout',
+    title: ".NET",
+    heading: ".NET"
+  })
+});
+router.get('/courses/html', auth, (req, res) => {
+  res.render('coursedetailshtml', {
+    layout: './layouts/dash-layout',
+    title: "HTML",
+    heading: "HTML"
+  })
+});
+router.get('/courses/java', auth, (req, res) => {
+  res.render('coursedetailsjava', {
+    layout: './layouts/dash-layout',
+    title: "java",
+    heading: "Java"
+  })
+});
 
-
-
+router.get('/courses/php', auth, (req, res) => {
+  res.render('coursedetailsphp', {
+    layout: './layouts/dash-layout',
+    title: "PHP",
+    heading: "PHP"
+  })
+});
+router.get('/courses/python', auth, (req, res) => {
+  res.render('coursedetailsPython', {
+    layout: './layouts/dash-layout',
+    title: "Python",
+    heading: "Python"
+  })
+});
+router.get('/courses/R', auth, (req, res) => {
+  res.render('coursedetailsR', {
+    layout: './layouts/dash-layout',
+    title: "R",
+    heading: "R"
+  })
+});
+router.get('/courses/react', auth, (req, res) => {
+  res.render('coursedetailsreact', {
+    layout: './layouts/dash-layout',
+    title: "React",
+    heading: "React"
+  })
+});
 router.get('/logout', (req, res) => {
   res.cookie('authToken', '', {
     maxAge: 1
