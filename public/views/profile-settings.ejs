@@ -18,12 +18,12 @@
                     <div class="list-group list-group-flush account-settings-links">
                         <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change Password</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-notifications">Notifications</a>
                     </div>
                 </div>
                 <div class="col-md-9">
                     <div class="tab-content">
+                        <!-- General Section -->
                         <div class="tab-pane fade active show" id="account-general">
                             <div class="card-body media align-items-center">
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Profile Avatar" class="d-block ui-w-80">
@@ -39,23 +39,21 @@
                             <hr class="border-light m-0">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label class="form-label">Username</label>
-                                    <input type="text" class="form-control mb-1" placeholder="Enter your username">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control mb-1" placeholder="Enter your first name">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter your full name">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control mb-1" placeholder="Enter your last name">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">E-mail</label>
                                     <input type="email" class="form-control mb-1" placeholder="Enter your email">
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-label">Company</label>
-                                    <input type="text" class="form-control" placeholder="Enter your company name">
-                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
                             </div>
                         </div>
+                        <!-- Change Password Section -->
                         <div class="tab-pane fade" id="account-change-password">
                             <div class="card-body pb-2">
                                 <div class="form-group">
@@ -70,49 +68,10 @@
                                     <label class="form-label">Repeat New Password</label>
                                     <input type="password" class="form-control" placeholder="Repeat new password">
                                 </div>
+                                <button type="submit" class="btn btn-primary">Update Password</button>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="account-info">
-                            <div class="card-body pb-2">
-                                <div class="form-group">
-                                    <label class="form-label">Bio</label>
-                                    <textarea class="form-control" rows="5" placeholder="Write a brief bio about yourself..."></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Birthday</label>
-                                    <input type="date" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Country</label>
-                                    <select class="custom-select">
-                                        <option selected disabled>Select your country</option>
-                                        <option>USA</option>
-                                        <option>Canada</option>
-                                        <option>UK</option>
-                                        <option>Germany</option>
-                                        <option>France</option>
-                                        <option>Australia</option>
-                                        <option>Italy</option>
-                                        <option>Russia</option>
-                                        <option>Japan</option>
-                                        <option>China</option>
-                                        <option>India</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body pb-2">
-                                <h6 class="mb-4">Contacts</h6>
-                                <div class="form-group">
-                                    <label class="form-label">Phone</label>
-                                    <input type="text" class="form-control" placeholder="Enter your phone number">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Website</label>
-                                    <input type="url" class="form-control" placeholder="Enter your website URL">
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Notifications Section -->
                         <div class="tab-pane fade" id="account-notifications">
                             <div class="card-body pb-2">
                                 <h6 class="mb-4">Activity</h6>
