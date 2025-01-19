@@ -101,7 +101,7 @@ router.post('/signin', async (req, res) => {
     .status(200)
     .cookie('authToken', token, {
     })
-    .json({name: user.firstName, avatar: user.avatar, role: user.role});
+    .json({firstName: user.firstName, lastName: user.lastName, email: user.email, avatar: user.avatar, role: user.role});
 })
 
 
