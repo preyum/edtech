@@ -54,7 +54,7 @@
                                     <label class="form-label">New Password</label>
                                     <input type="password" class="form-control mb-1" placeholder="Enter new password">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                <button type="submit" id="update-user-submit" class="btn btn-primary">Save Changes</button>
                             </div>
                         </div>
 
@@ -131,6 +131,35 @@
         document.getElementById('lastName').value = data.lastName;
         document.getElementById('email').value = data.email;
         document.getElementById('dp').src = data.avatar;
+        document.getElementById('update-user-submit').addEventListener('click', async (e)=>{
+            e.preventDefault();
+            const fileInput = document.querySelector(".account-settings-fileinput");
+            const newPassword = document.querySelector("input[type='password']").value;
+            const formdata = new FormData();
+            formdata.append('password', newPassword);
+            // Include the file if a new one is selected
+            if (fileInput.files[0]) {
+                formdata.append("avatar", fileInput.files[0]);
+            }
+            try{
+                const response = await fetch(`/${data.email}`, {
+                    method: 'PUT',
+                    body: formdata
+                })
+                if(!response.ok)
+                {
+                    alert("Error Occurred");
+                }
+                const result = await response.json();
+                console.log(result);
+                
+                alert("Success");
+                
+            }catch(error){
+                console.log(`Error fetching update route: ${error}`);
+                alert("Error");
+            }
+        })
     </script>
 </body>
 

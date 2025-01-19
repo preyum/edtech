@@ -93,7 +93,7 @@ router.get('/courses/cpp', auth, (req, res) => {
   })
 });
 router.get('/courses/dotnet', auth, (req, res) => {
-  res.render('coursedetaildotnet', {
+  res.render('coursedetailsdotnet', {
     layout: './layouts/dash-layout',
     title: ".NET",
     heading: ".NET"

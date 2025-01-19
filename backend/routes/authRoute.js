@@ -110,7 +110,7 @@ router.post("/signin", async (req, res) => {
     });
 });
 
-router.put("/:email", auth, updateUser);
+router.put("/:email", upload.fields([{ name: 'avatar', maxCount: 1 }]),  updateUser);
 
 
 export default router;
