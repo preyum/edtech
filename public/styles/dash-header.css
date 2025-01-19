@@ -79,7 +79,7 @@ body {
 /* Profile Container */
 .profile-container {
   position: absolute; /* Change to absolute to align with the navbar */
-  right: 20px; /* Position on the right side of the navbar */
+  right: 30px; /* Position on the right side of the navbar */
   top: 10px; /* Adjust vertical positioning */
   display: flex;
   align-items: center;
@@ -108,7 +108,7 @@ body {
   display: none; /* Initially hidden */
   position: absolute;
   right: auto; /* Remove alignment to the right */
-  left: -30px; /* Shift dropdown to the left */
+  left: -50px; /* Shift dropdown to the left */
   top: 60px; /* Position dropdown below the profile picture */
   background: #ffffff; /* Solid white background for better visibility */
   border: 1px solid #ddd; /* Light border for structure */
