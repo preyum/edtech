@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classroom Chat UI</title>
   <link rel="stylesheet" href="../styles/classroom-chat-box.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="chat-container">
@@ -23,12 +24,16 @@
       <label for="file-upload" class="custom-file-upload">
         Upload File
       </label>
-      <input type="file" id="file-upload" accept=".pdf,.doc,.docx" />
+      <input type="file" id="file-upload" accept=".pdf,.doc,.docx" style="display: none;" />
+      <div id="file-name" class="file-name hidden">
+        <i class="fas fa-file-pdf"></i>
+        <p id="file-info"></p>
+        <button id="remove-file" class="remove-file">Remove</button>
+      </div>
     </footer>
-    <div class="popup hidden" id="popup">
-      <p>Class link copied!</p>
-    </div>
+    <div class="popup hidden" id="popup"></div>
   </div>
+
   <script>
     document.getElementById('send-link-btn').addEventListener('click', function() {
       const chatContent = document.getElementById('chat-content');
@@ -39,9 +44,10 @@
         linkMessage.innerHTML = `<p>Class Link: <a href="${inputMessage}" target="_blank">${inputMessage}</a></p>`;
         chatContent.appendChild(linkMessage);
         chatContent.scrollTop = chatContent.scrollHeight;
-        document.getElementById('input-message').value = ''; // Clear the input field after sending the message
+        document.getElementById('input-message').value = '';
       }
     });
+
     document.getElementById('file-upload').addEventListener('change', function() {
       const file = this.files[0];
       const chatContent = document.getElementById('chat-content');
@@ -51,6 +57,16 @@
         fileMessage.innerHTML = `<p>File Uploaded: ${file.name}</p>`;
         chatContent.appendChild(fileMessage);
         chatContent.scrollTop = chatContent.scrollHeight;
+
+        const fileNameDiv = document.getElementById('file-name');
+        const fileInfo = document.getElementById('file-info');
+        fileInfo.textContent = `File: ${file.name}`;
+        fileNameDiv.classList.remove('hidden');
+        
+        document.getElementById('remove-file').addEventListener('click', function() {
+          document.getElementById('file-upload').value = '';
+          fileNameDiv.classList.add('hidden');
+        });
       }
     });
   </script>
