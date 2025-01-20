@@ -1,10 +1,21 @@
-<link rel="stylesheet" href="../styles/homepage.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Scholarly</title>
+  <link rel="stylesheet" href="../styles/homepage.css">
+</head>
 <body>
-  <header>
+  <!-- Header Section -->
+  <header id="navbar">
+    <div id="navbar-logo">
+      
+    </div>
     <h1>Welcome to Scholarly</h1>
-    
   </header>
 
+  <!-- Main Content -->
   <main class="main">
     <div class="container">
       <!-- Hero Section -->
@@ -42,14 +53,11 @@
     </div>
   </main>
 
-  <!-- Additional Information Section -->
-  
-
-  
+  <!-- Clear Local Storage Script -->
+  <script>
+    window.onload = function () {
+      localStorage.clear(); // Clear localStorage
+    };
+  </script>
 </body>
-<script>
-  window.onload = function () {
-  localStorage.clear(); // Clear localStorage
-};
-</script>
 </html>
