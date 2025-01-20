@@ -142,7 +142,7 @@
                 formdata.append("avatar", fileInput.files[0]);
             }
             try{
-                const response = await fetch(`/${data.email}`, {
+                const response = await fetch(`/users/${data.email}`, {
                     method: 'PUT',
                     body: formdata
                 })
