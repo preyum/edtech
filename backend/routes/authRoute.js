@@ -14,13 +14,13 @@ const router = express.Router();
 
 router.post(
   "/register",
-  upload.fields([{ name: "photo", maxCount: 1 }]),
+  upload.fields([{ name: "avatar", maxCount: 1 }]),
   async (req, res) => {
     // Optional image upload logic
     let imageUrl;
-    if (req.files && req.files.photo) {
+    if (req.files && req.files.avatar) {
       try {
-        const localFilePath = req.files.photo[0].path;
+        const localFilePath = req.files.avatar[0].path;
         console.log("file path from server: ", localFilePath);
         imageUrl = await uploadOnCloudinary(localFilePath);
         console.log("File uploaded successfully!");
