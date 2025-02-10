@@ -50,6 +50,7 @@ router.post(
       });
 
     // hash the password
+    // todo: use the method created in user.models
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(req.body.password, salt);
 
@@ -66,7 +67,6 @@ router.post(
     try {
       await newUser.save();
       console.log("User Created");
-
       res.redirect("/confirmation");
     } catch (err) {
       res.status(502).send({
@@ -102,15 +102,20 @@ router.post("/signin", async (req, res) => {
     .status(200)
     .cookie("authToken", token, {})
     .json({
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      avatar: user.avatar,
-      role: user.role,
+      user: {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        avatar: user.avatar,
+        role: user.role,
+      },
     });
 });
 
-router.put("/:email", upload.fields([{ name: 'avatar', maxCount: 1 }]),  updateUser);
-
+router.put(
+  "/:email",
+  upload.fields([{ name: "avatar", maxCount: 1 }]),
+  updateUser
+);
 
 export default router;
